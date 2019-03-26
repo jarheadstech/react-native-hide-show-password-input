@@ -35,14 +35,20 @@ export default class PasswordInputText extends React.Component {
 
         // set new state value
         this.setState(newState)
-
     };
 
-
+    focus () {
+        this.field.focus();
+    }
     render() {
         return (
             <View>
-                <TextField {...this.props}
+                <TextField {...this.props} ref ={component => this.field = component} 
+
+
+
+
+
                            secureTextEntry={this.state.password}
                            label={this.props.label}/>
                 <Icon style={styles.icon}
